@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Spartan:wght@400;700&display=swap');
+
+* {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	box-sizing: border-box;
+	vertical-align: baseline;
+	font-family: 'Spartan', sans-serif;
+}
+
+.App {
+	position: relative;
+}
+
+.Navbar {
+	width: 80vw;
+	margin: 1rem auto 0;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	z-index: 2;
+	&-Logo {
+		height: 7rem;
+		margin-right: 5rem;
+	}
+	a {
+		color: white;
+		text-decoration: none;
+		text-shadow: -1px -1px 5px #000;
+		transition: color 0.3s ease;
+		&:hover {
+			color: hsla(0, 0%, 100%, 0.65);
+		}
+		img {
+			text-shadow: none;
+		}
+	}
+}
+
+.Login {
+	height: 100vh;
+	width: 100vw;
+	background-image: url('./assets/images/login.jpg');
+	background-size: cover;
+	background-position: center top;
+	display: flex;
+	justify-content: center;
+	form {
+		min-height: 46vh;
+		max-height: 28vh;
+		margin-top: 10vh;
+		padding: 2rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background-color: hsla(0, 0%, 100%, 0.85);
+		border-radius: 0.5rem;
+		box-shadow: 0px 10px 20px hsla(0, 0%, 0%, 0.19),
+			0px 6px 6px hsla(0, 0%, 0%, 0.23);
+		h3 > sup {
+			vertical-align: super;
+			font-size: smaller;
+		}
+		h2 {
+			margin: 0.5rem 0 1.5rem;
+			font-size: 1.25rem;
+		}
+		span {
+			display: inline-block;
+			margin-bottom: 0.5rem;
+		}
+		.firstName,
+		.lastName,
+		.email,
+		.password {
+			height: 2rem;
+			padding: 0.5rem 0.5rem 0.25rem;
+			border: 1px solid hsl(0, 0%, 80%);
+			transition: box-shadow 0.3s ease;
+			&:focus {
+				box-shadow: 10px 10px 20px #bebebe, -10px -10px 20px #ffffff;
+			}
+		}
+		.firstName {
+			width: 10rem;
+			margin-right: 3px;
+			border-radius: 0.5rem 0 0 0.5rem;
+		}
+		.lastName {
+			width: 10rem;
+			border-radius: 0 0.5rem 0.5rem 0;
+		}
+		.email,
+		.password {
+			width: 20.2rem;
+			border-radius: 0.5rem;
+		}
+		.Error {
+			height: 2rem;
+			position: relative;
+			&::after {
+				position: absolute;
+				content: '*';
+				top: 10px;
+				right: -20px;
+				width: 50px;
+				height: 50px;
+				font-size: 3rem;
+				color: red;
+			}
+			& > input {
+				border: 1px solid red;
+			}
+		}
+		p {
+			width: 20rem;
+			margin: 0.75rem 0;
+			padding: 0 1rem;
+			text-align: center;
+		}
+		button {
+			margin-top: 0.5rem;
+			padding: 0.75rem 1.75rem;
+			border-radius: 0.5rem;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: white;
+			background-color: hsl(214, 99%, 64%);
+			cursor: pointer;
+			transition: all 0.3s ease;
+			svg {
+				margin-left: 1.25rem;
+			}
+			&:hover {
+				background-color: hsl(214, 99%, 70%);
+				box-shadow: 10px 10px 20px #bebebe, -10px -10px 20px #ffffff;
+			}
+		}
+	}
+}
+
+.Welcome {
+	height: 100vh;
+	width: 100vw;
+	position: relative;
+	background-image: url('./assets/images/background.jpg');
+	background-size: cover;
+	background-position: center top;
+	filter: brightness(85%);
+	z-index: 1;
+	&-Text {
+		min-width: 20vw;
+		margin-right: clamp(0.5rem, 10vw, 25rem);
+		position: absolute;
+		top: 30%;
+		right: 0%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		user-select: none;
+		h1 {
+			font-size: 2rem;
+			color: white;
+			font-family: 'Dancing Script', sans-serif;
+			text-shadow: -1px -1px 5px #000;
+		}
+		p {
+			width: clamp(20rem, 20vw, 25rem);
+			margin: 1rem 0 1.5rem;
+			font-size: clamp(0.9rem, 1vw, 1.4rem);
+			color: white;
+			text-align: center;
+			text-shadow: -1px -1px 5px #000;
+			line-height: clamp(1.25rem, 1vw, 2rem);
+		}
+		button {
+			padding: 1.25rem 3rem;
+			border-radius: 2rem;
+			font-size: 0.9rem;
+			font-weight: bold;
+			text-transform: uppercase;
+			background-color: hsla(0, 0%, 0%, 0);
+			text-shadow: -1px -1px 5px #000;
+			border: 1.5px solid white;
+			color: white;
+			transition: background-color 0.25s ease-in-out;
+			cursor: pointer;
+			&:hover {
+				background-color: hsla(0, 0%, 100%, 0.5);
+			}
+		}
+	}
+}
