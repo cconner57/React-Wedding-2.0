@@ -1,5 +1,5 @@
 import { useState, lazy, Suspense } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 const Navbar = lazy(() => import('../components/Navbar'));
 const Welcome = lazy(() => import('../screens/Welcome'));
@@ -11,26 +11,35 @@ const Registry = lazy(() => import('../screens/Registry'));
 const Login = lazy(() => import('../screens/Login'));
 
 const Navigation = () => {
-	const [isLoggedIn, setIsLoggedIn] = useState(
-		sessionStorage.getItem('login') ?? ''
+	const [user, setUser] = useState({
+		firstName: '',
+		lastName: '',
+		street: '',
+		city: '',
+		postalCode: '',
+		password: '',
+	});
+	const [isLoggedIn, setIsLoggedIn] = useState<boolean>(
+		Boolean(sessionStorage.getItem('login')) ?? false
 	);
 
 	return (
 		<Suspense fallback={<span>Loading...</span>}>
-			<Router>
+			<BrowserRouter>
 				<Navbar isLoggedIn={isLoggedIn} />
-				<Switch>
-					<Route path='/story' component={Story} />
-					<Route path='/details' component={Details} />
-					<Route path='/rsvp' component={RSVP} />
-					<Route path='/gallery' component={Gallery} />
-					<Route path='/registry' component={Registry} />
-					<Route path='/welcome' component={Welcome} />
-					<Route exact path='/'>
-						<Login setIsLoggedIn={setIsLoggedIn} />
-					</Route>
-				</Switch>
-			</Router>
+				<Routes>
+					<Route path='/story' element={<Story />} />
+					<Route path='/details' element={<Details />} />
+					<Route path='/rsvp' element={<RSVP user={user} />} />
+					<Route path='/gallery' element={<Gallery />} />
+					<Route path='/registry' element={<Registry />} />
+					<Route path='/welcome' element={<Welcome />} />
+					<Route
+						index
+						element={<Login setIsLoggedIn={setIsLoggedIn} setUser={setUser} />}
+					/>
+				</Routes>
+			</BrowserRouter>
 		</Suspense>
 	);
 };

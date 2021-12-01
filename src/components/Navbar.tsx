@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const Navbar = ({ isLoggedIn }: any) => {
+const Navbar = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
 	return (
 		<>
 			{isLoggedIn && (
@@ -20,9 +20,6 @@ const Navbar = ({ isLoggedIn }: any) => {
 					</Link>
 					<Link to='/rsvp'>
 						<h1>RSVP</h1>
-					</Link>
-					<Link to='/gallery'>
-						<h1>Gallery</h1>
 					</Link>
 					<Link to='/registry'>
 						<h1>Registry</h1>
