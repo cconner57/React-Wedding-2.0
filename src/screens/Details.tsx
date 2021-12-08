@@ -1,6 +1,6 @@
 const Details = () => {
 	return (
-		<div className='Details'>
+		<div id='Details'>
 			<div className='Details-Column'>
 				<div className='Date'>
 					<span>

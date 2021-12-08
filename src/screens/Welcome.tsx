@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-scroll';
 
 const Welcome = () => {
 	return (
-		<div className='Welcome'>
+		<div id='Welcome'>
 			<div className='Welcome-Text'>
 				<h1>Monday, January 21, 2022</h1>
 				<p>
@@ -10,7 +10,7 @@ const Welcome = () => {
 					speak our vows and join in marriage in the presence of friends and
 					family.
 				</p>
-				<Link to='/details'>
+				<Link to='Details' smooth={true}>
 					<button>View Details</button>
 				</Link>
 			</div>

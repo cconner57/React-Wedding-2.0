@@ -1,32 +1,25 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-scroll';
 
-const Navbar = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
+const Navbar = () => {
 	return (
-		<>
-			{isLoggedIn && (
-				<div className='Navbar'>
-					<Link to='/welcome'>
-						<img
-							className='Navbar-Logo'
-							src={process.env.PUBLIC_URL + '/images/logo.png'}
-							alt='Logo'
-						/>
-					</Link>
-					<Link to='/details'>
-						<h1>Details</h1>
-					</Link>
-					<Link to='/story'>
-						<h1>Our Story</h1>
-					</Link>
-					<Link to='/rsvp'>
-						<h1>RSVP</h1>
-					</Link>
-					<Link to='/registry'>
-						<h1>Registry</h1>
-					</Link>
-				</div>
-			)}
-		</>
+		<div className='Navbar'>
+			<Link to='Welcome' smooth={true}>
+				<img
+					className='Navbar-Logo'
+					src={process.env.PUBLIC_URL + '/images/logo.png'}
+					alt='Logo'
+				/>
+			</Link>
+			<Link to='Details' smooth={true}>
+				<h1>Details</h1>
+			</Link>
+			<Link to='Story' smooth={true}>
+				<h1>Our Story</h1>
+			</Link>
+			<Link to='Registry' smooth={true}>
+				<h1>Registry</h1>
+			</Link>
+		</div>
 	);
 };
 

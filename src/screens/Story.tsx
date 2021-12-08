@@ -2,7 +2,7 @@ import React from 'react'
 
 const Story = () => {
     return (
-        <div>
+        <div id='Story'>
             Story
         </div>
     )
