@@ -18,7 +18,7 @@ const Navbar = () => {
 	}, []);
 
 	return (
-		<div className={`'Navbar' ${show && 'Navbar-Active'}`}>
+		<div className={`Navbar ${show && 'Navbar-Active'}`}>
 			<Link to='Welcome' smooth={true}>
 				<img
 					className='Navbar-Logo'
