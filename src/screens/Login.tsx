@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 const Login = ({ setIsLoggedIn }: { setIsLoggedIn: Function }) => {
-	const [inputs, setInputs] = useState({});
-	const [error, setError] = useState(false);
+	// const [inputs, setInputs] = useState({});
+	// const [error, setError] = useState(false);
 	const [showMessage, setShowMessage] = useState(false);
 
 	useEffect(() => {
@@ -13,33 +13,33 @@ const Login = ({ setIsLoggedIn }: { setIsLoggedIn: Function }) => {
 		return () => clearTimeout(timer);
 	}, [showMessage]);
 
-	const navigate = useNavigate();
+	// const navigate = useNavigate();
 
 	useEffect(() => {
 		sessionStorage.clear();
 		localStorage.clear();
 	}, []);
 
-	const onInputChange = (e: any) => {
-		const { name, value } = e.target;
-		setInputs((input) => ({ ...input, [name]: value }));
-	};
+	// const onInputChange = (e: any) => {
+	// 	const { name, value } = e.target;
+	// 	setInputs((input) => ({ ...input, [name]: value }));
+	// };
 
-	const onFormSubmit = (e: any) => {
-		e.preventDefault();
-		const { password } = e.target;
+	// const onFormSubmit = (e: any) => {
+	// 	e.preventDefault();
+	// 	const { password } = e.target;
 
-		setError(password.value !== process.env.REACT_APP_SECRET);
+	// 	setError(password.value !== process.env.REACT_APP_SECRET);
 
-		error && setShowMessage(true);
+	// 	error && setShowMessage(true);
 
-		if (!error && password.value === process.env.REACT_APP_SECRET) {
-			setIsLoggedIn(true);
-			sessionStorage.setItem('login', 'true');
-			localStorage.setItem('user', JSON.stringify(inputs));
-			navigate('/welcome', { replace: true });
-		}
-	};
+	// 	if (!error && password.value === process.env.REACT_APP_SECRET) {
+	// 		setIsLoggedIn(true);
+	// 		sessionStorage.setItem('login', 'true');
+	// 		localStorage.setItem('user', JSON.stringify(inputs));
+	// 		navigate('/welcome', { replace: true });
+	// 	}
+	// };
 
 	return (
 		<div className='Login'>
