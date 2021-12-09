@@ -13,7 +13,7 @@
 .Navbar {
 	width: 60vw;
 	margin: 1rem auto 0;
-	position: absolute;
+	position: fixed;
 	left: 50%;
 	transform: translateX(-50%);
 	display: flex;
@@ -30,6 +30,7 @@
 		text-decoration: none;
 		text-shadow: -1px -1px 5px #000;
 		transition: color 0.3s ease;
+		cursor: pointer;
 		&:hover {
 			color: hsla(0, 0%, 100%, 0.65);
 		}
@@ -48,7 +49,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	form {
+	.Form {
 		align-items: center;
 		background-color: hsla(0, 0%, 100%, 0.85);
 		border-radius: 0.5rem;
@@ -139,6 +140,28 @@
 	}
 }
 
+.Navbar-Active {
+	min-height: 8vh;
+	min-width: 60vw;
+	margin: 1.5rem 0 0;
+	border-radius: 15px;
+	background: hsla(200, 100%, 85%, 0.5);
+	backdrop-filter: blur(7px);
+	-webkit-backdrop-filter: blur(7px);
+	@media (min-width: 360px) and (max-width: 430px) {
+		min-width: 100vw;
+		margin: 0;
+	}
+	@media (max-width: 850px) {
+		a {
+			margin-left: 1rem;
+		}
+	}
+	@media (max-width: 1200px) {
+		justify-content: space-around;
+	}
+}
+
 @keyframes fadeIn {
 	from {
 		opacity: 0;
@@ -215,12 +238,12 @@
 	background-size: 100vw 100vh;
 	background-repeat: no-repeat;
 	font-size: clamp(0.6rem, 2vw, 0.9rem);
-	&-Column {
+	.Details-Column {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 		min-height: 40vh;
-		max-width: 29vw;
+		max-width: 35vw;
 		margin-right: 2rem;
 	}
 	.Date {

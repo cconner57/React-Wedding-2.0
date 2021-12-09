@@ -1,8 +1,24 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
 
 const Navbar = () => {
+	const [show, handleNav] = useState(false);
+
+	const windowTransition = () => {
+		if (window.scrollY > 10) {
+			handleNav(true);
+		} else handleNav(false);
+	};
+
+	useEffect(() => {
+		window.addEventListener('scroll', windowTransition);
+		return () => {
+			window.removeEventListener('scroll', windowTransition);
+		};
+	}, []);
+
 	return (
-		<div className='Navbar'>
+		<div className={`'Navbar' ${show && 'Navbar-Active'}`}>
 			<Link to='Welcome' smooth={true}>
 				<img
 					className='Navbar-Logo'
