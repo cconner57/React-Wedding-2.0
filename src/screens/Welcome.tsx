@@ -13,6 +13,12 @@ const Welcome = () => {
 				<Link to='Details' smooth={true}>
 					<button>View Details</button>
 				</Link>
+				<Link className='Mobile' to='Story' smooth={true}>
+					<button>View Story</button>
+				</Link>
+				<Link className='Mobile' to='Registry' smooth={true}>
+					<button>View Registry</button>
+				</Link>
 			</div>
 		</div>
 	);
