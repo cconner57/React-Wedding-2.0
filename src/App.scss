@@ -30,12 +30,18 @@
 		flex-direction: column;
 		padding: 2rem 3rem;
 		transition: all 0.5s ease;
+		@media (max-width: 768px) {
+			width: 90vw;
+		}
+		h3 {
+			font-size: clamp(1rem, 1.5vw, 1.25rem);
+		}
 		h3 > sup {
 			vertical-align: super;
 			font-size: smaller;
 		}
 		h2 {
-			font-size: 1.25rem;
+			font-size: clamp(0.9rem, 1.5vw, 1.25rem);
 			margin: 0.5rem 0 1.25rem;
 		}
 		span {
@@ -49,6 +55,9 @@
 			height: 2rem;
 			padding: 0.5rem 0.5rem 0.25rem;
 			transition: box-shadow 0.3s ease;
+			@media (max-width: 768px) {
+				width: 18rem;
+			}
 			&:focus {
 				box-shadow: 10px 10px 20px #bebebe, -10px -10px 20px #ffffff;
 			}
@@ -72,7 +81,7 @@
 			}
 		}
 		p {
-			font-size: 1rem;
+			font-size: clamp(0.85rem, 1.5vw, 1rem);
 			width: 14rem;
 			margin-bottom: 1rem;
 			text-align: center;
@@ -123,10 +132,16 @@
 	transition: background 0.5s ease-in-out;
 	width: 50vw;
 	z-index: 2;
+	@media (max-width: 768px) {
+		justify-content: center;
+	}
 	&-Logo {
 		cursor: pointer;
 		height: 7rem;
 		margin-right: 2rem;
+		@media (max-width: 768px) {
+			margin: 0;
+		}
 	}
 	a {
 		color: white;
@@ -134,6 +149,11 @@
 		text-decoration: none;
 		text-shadow: -1px -1px 5px #000;
 		transition: color 0.3s ease;
+		@media (max-width: 768px) {
+			h1 {
+				display: none;
+			}
+		}
 		&:hover {
 			color: hsla(0, 0%, 100%, 0.65);
 		}
@@ -152,18 +172,7 @@
 	a {
 		text-shadow: 0px 1px 10px #000;
 	}
-	@media (min-width: 360px) and (max-width: 430px) {
-		min-width: 100vw;
-		margin: 0;
-	}
-	@media (max-width: 850px) {
-		a {
-			margin-left: 1rem;
-		}
-	}
-	@media (max-width: 1200px) {
-		justify-content: space-around;
-	}
+
 }
 
 .Main {
@@ -191,9 +200,12 @@
 		justify-content: center;
 		align-items: center;
 		user-select: none;
+		@media (max-width: 768px) {
+			margin-top: 3rem;
+		}
 		h1 {
-			font-size: 2rem;
-			color: white;
+			font-size: clamp(1.5rem, 1.5vw, 2rem);
+			color: hsl(0, 0%, 100%);
 			font-family: 'Dancing Script', sans-serif;
 			text-shadow: -1px -1px 5px #000;
 		}
@@ -201,7 +213,7 @@
 			width: clamp(20rem, 20vw, 25rem);
 			margin: 1rem 0 1.5rem;
 			font-size: clamp(0.9rem, 1vw, 1.4rem);
-			color: white;
+			color: hsl(0, 0%, 100%);
 			text-align: center;
 			text-shadow: -1px -1px 5px #000;
 			line-height: clamp(1.25rem, 1vw, 2rem);
@@ -234,6 +246,9 @@
 	background-size: cover;
 	font-size: clamp(0.6rem, 2vw, 0.9rem);
 	padding-top: 5rem;
+	@media (max-width: 768px) {
+		flex-direction: column;
+	}
 	.Details-Column {
 		display: flex;
 		flex-direction: column;
@@ -241,6 +256,15 @@
 		min-height: 55vh;
 		max-width: 35vw;
 		margin-right: 2rem;
+		@media (max-width: 768px) {
+			flex-direction: row;
+			flex-wrap: wrap;
+			min-width: 80vw;
+			min-height: 50vh;
+			justify-content: center;
+			align-items: center;
+			margin-right: 0;
+		}
 	}
 	.Date {
 		padding: 1.5rem;
@@ -251,6 +275,11 @@
 		flex-direction: column;
 		align-items: center;
 		box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+		@media (max-width: 768px) {
+			padding: .7rem;
+			text-align: center;
+			max-height: 10vh;
+		}
 		span {
 			display: flex;
 			text-align: center;
@@ -272,14 +301,21 @@
 		padding: 1.5rem;
 		border-radius: 1rem;
 		box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+		@media (max-width: 768px) {
+			max-height: 13vh;
+		}
 		h2:first-child {
 			margin-bottom: 0.5rem;
 		}
 		h2 {
-			font-size: clamp(0.4rem, 3vw, 0.9rem);
+			font-size: clamp(0.8rem, 1.5vw, 0.9rem);
 		}
 		p {
 			margin-top: 0.5rem;
+			font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+			@media (max-width: 768px) {
+				margin-top: 0.25rem;
+			}
 		}
 	}
 	.Information {
@@ -288,12 +324,18 @@
 		padding: 1.5rem;
 		border-radius: 1rem;
 		box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+		@media (max-width: 768px) {
+			max-height: 17vh;
+		}
 		h1 {
-			font-size: clamp(0.7rem, 3vw, 1.1rem);
+			font-size: clamp(1rem, 1.5vw, 1.1rem);
 			margin-bottom: 0.4rem;
 		}
 		p {
 			padding: 0 3.5rem 0.75rem;
+			@media (max-width: 768px) {
+				padding: 0 .5rem 0.75rem;
+			}
 		}
 		p + p {
 			padding: 0.75rem 0rem 0;
@@ -313,6 +355,11 @@
 		padding: 2rem;
 		border-radius: 1rem;
 		box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+		@media (max-width: 768px) {
+			flex-direction: row;
+			min-height: 10vh;
+			max-width: 90vw;
+		}
 		&::before {
 			content: '';
 			position: absolute;
@@ -322,6 +369,9 @@
 			height: 20.62rem;
 			border-radius: 0 1rem;
 			background-color: hsl(0, 0%, 50%);
+			@media (max-width: 768px) {
+				display: none;
+			}
 		}
 		.Ceremony,
 		.Dinner {
@@ -329,19 +379,30 @@
 			min-width: 6rem;
 			background-color: hsl(0, 0%, 100%);
 			margin-right: auto;
+			@media (max-width: 768px) {
+				min-width: 3.5rem;
+				max-height: 5.5rem;
+			}
 			img {
 				height: 4rem;
+				@media (max-width: 768px) {
+					height: 3rem;
+					margin-bottom: 1.2rem;
+				}
 			}
 		}
 		.Cocktail,
 		.Dancing {
 			position: relative;
-			max-width: 5.5rem;
 			min-width: 5.75rem;
 			background-color: hsl(0, 0%, 100%);
 			margin-left: auto;
 			img {
 				height: 4rem;
+				@media (max-width: 768px) {
+					height: 3rem;
+					margin-bottom: 1.2rem;
+				}
 			}
 		}
 		.Ceremony::before,
@@ -353,6 +414,9 @@
 			width: 2.85rem;
 			height: 0.25rem;
 			background-color: hsl(0, 0%, 50%);
+			@media (max-width: 768px) {
+				display: none;
+			}
 		}
 		.Cocktail::before,
 		.Dancing::before {
@@ -363,6 +427,9 @@
 			width: 2.85rem;
 			height: 0.25rem;
 			background-color: hsl(0, 0%, 50%);
+			@media (max-width: 768px) {
+				display: none;
+			}
 		}
 	}
 }
@@ -385,29 +452,37 @@
 		box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 		overflow: scroll;
 		background-color: hsla(0, 0%, 100%, 0.85);
+		@media (max-width: 768px) {
+			max-width: 90vw;
+			padding: 1rem;
+		}
 	}
 	h1 {
 		text-align: center;
-		font-size: clamp(0.7rem, 3vw, 1.6rem);
+		font-size: clamp(1.4rem, 2vw, 1.7rem);
 		margin-bottom: 0.5rem;
 		font-family: 'Oooh Baby', cursive;
 	}
 	h2 {
 		text-align: center;
-		font-size: clamp(0.4rem, 3vw, 0.6rem);
+		font-size: 0.6rem;
 		margin-bottom: 1.5rem;
 		font-family: 'Poppins', cursive;
 	}
 	h3 {
 		text-align: center;
-		font-size: clamp(0.4rem, 3vw, 1.3rem);
+		font-size: 1.3rem;
 		margin: 2rem 0 0.25rem;
 		font-family: 'Oooh Baby', cursive;
 	}
 	p {
-		font-size: clamp(0.6rem, 2vw, 0.9rem);
+		font-size: clamp(0.8rem, 2vw, 0.9rem);
 		padding: 0.5rem 1rem;
 		text-shadow: 0px 1px 2px #fff;
+		line-height: 1.3rem;
+		@media (max-width: 768px) {
+			line-height: 1.2rem;
+		}
 	}
 	span {
 		font-weight: bolder;
@@ -416,9 +491,15 @@
 		margin: 1rem 0;
 		display: flex;
 		align-items: center;
+		@media (max-width: 768px) {
+			margin: 0;
+		}
 		img {
 			height: 10rem;
 			border-radius: 2rem;
+			@media (max-width: 768px) {
+				display: none;
+			}
 		}
 	}
 }
@@ -432,6 +513,9 @@
 	justify-content: center;
 	padding-left: 20vw;
 	padding-top: 7.5rem;
+	@media (max-width: 768px) {
+		background-position: right;
+	}
 	.Card {
 		min-height: 20vh;
 		max-width: 20vw;
@@ -443,6 +527,9 @@
 		box-shadow: 0 4px 18px hsla(0, 0, 100%, 0.25),
 			0 5px 5px hsla(0, 0, 100%, 0.22);
 		text-decoration: none;
+		@media (max-width: 768px) {
+			max-width: 60vw;
+		}
 		h1 {
 			padding-top: 1rem;
 			color: hsl(0, 0%, 0%);
