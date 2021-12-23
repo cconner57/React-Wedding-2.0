@@ -22,7 +22,7 @@ const Navbar = () => {
 			<Link to='Welcome' smooth={true}>
 				<img
 					className='Navbar-Logo'
-					src={process.env.PUBLIC_URL + '/images/logo.png'}
+					src={process.env.PUBLIC_URL + '/images/logo.webp'}
 					alt='Logo'
 				/>
 			</Link>

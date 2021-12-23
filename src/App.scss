@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Spartan:wght@400;700&family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Oooh+Baby&display=swap&family=Spartan:wght@400;700&family=Poppins:wght@400;700&display=swap');
 
 * {
 	border: 0;
@@ -10,66 +10,16 @@
 	vertical-align: baseline;
 }
 
-.Navbar {
-	align-items: center;
-	border-radius: 20px;
-	display: flex;
-	justify-content: space-evenly;
-	left: 50%;
-	margin: 1rem auto 0;
-	position: fixed;
-	transform: translateX(-50%);
-	transition: background 0.5s ease-in-out;
-	width: 50vw;
-	z-index: 2;
-	&-Logo {
-		cursor: pointer;
-		height: 7rem;
-		margin-right: 5rem;
-	}
-	a {
-		color: white;
-		cursor: pointer;
-		text-decoration: none;
-		text-shadow: -1px -1px 5px #000;
-		transition: color 0.3s ease;
-		&:hover {
-			color: hsla(0, 0%, 100%, 0.65);
-		}
-		img {
-			text-shadow: none;
-		}
-	}
-}
-
-.Navbar-Active {
-	border-radius: 20px;
-	background: hsla(0, 0%, 90%, 0.25);
-	backdrop-filter: blur(3px);
-	-webkit-backdrop-filter: blur(3px);
-	@media (min-width: 360px) and (max-width: 430px) {
-		min-width: 100vw;
-		margin: 0;
-	}
-	@media (max-width: 850px) {
-		a {
-			margin-left: 1rem;
-		}
-	}
-	@media (max-width: 1200px) {
-		justify-content: space-around;
-	}
-}
-
 .Login {
 	height: 100vh;
 	width: 100vw;
-	background-image: url('./assets/images/login.jpg');
+	background-image: url('./assets/images/login.webp');
 	background-size: cover;
 	background-position: center top;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	animation: fadeIn 0.5s ease-in;
 	.Form {
 		align-items: center;
 		background-color: hsla(0, 0%, 100%, 0.85);
@@ -161,24 +111,71 @@
 	}
 }
 
-@keyframes fadeIn {
-	from {
-		opacity: 0;
+.Navbar {
+	align-items: center;
+	border-radius: 20px;
+	display: flex;
+	justify-content: space-evenly;
+	left: 50%;
+	margin: 1rem auto 0;
+	position: fixed;
+	transform: translateX(-50%);
+	transition: background 0.5s ease-in-out;
+	width: 50vw;
+	z-index: 2;
+	&-Logo {
+		cursor: pointer;
+		height: 7rem;
+		margin-right: 2rem;
 	}
-	to {
-		opacity: 1;
+	a {
+		color: white;
+		cursor: pointer;
+		text-decoration: none;
+		text-shadow: -1px -1px 5px #000;
+		transition: color 0.3s ease;
+		&:hover {
+			color: hsla(0, 0%, 100%, 0.65);
+		}
+		img {
+			text-shadow: none;
+		}
+	}
+}
+
+.Navbar-Active {
+	border-radius: 20px;
+	background: hsla(0, 0%, 90%, 0.25);
+	backdrop-filter: blur(7px);
+	-webkit-backdrop-filter: blur(7px);
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+	a {
+		text-shadow: 0px 1px 10px #000;
+	}
+	@media (min-width: 360px) and (max-width: 430px) {
+		min-width: 100vw;
+		margin: 0;
+	}
+	@media (max-width: 850px) {
+		a {
+			margin-left: 1rem;
+		}
+	}
+	@media (max-width: 1200px) {
+		justify-content: space-around;
 	}
 }
 
 .Main {
 	display: flex;
 	flex-direction: column;
+	animation: fadeIn 0.5s ease-in;
 }
 
 #Welcome {
 	height: 100vh;
 	position: relative;
-	background-image: url('./assets/images/background.jpg');
+	background-image: url('./assets/images/background.webp');
 	background-size: cover;
 	background-position: center top;
 	filter: brightness(85%);
@@ -233,20 +230,20 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-image: url('./assets/images/beach.jpg');
-	background-size: 100vw 100vh;
-	background-repeat: no-repeat;
+	background-image: url('./assets/images/details.webp');
+	background-size: cover;
 	font-size: clamp(0.6rem, 2vw, 0.9rem);
+	padding-top: 5rem;
 	.Details-Column {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		min-height: 40vh;
+		min-height: 55vh;
 		max-width: 35vw;
 		margin-right: 2rem;
 	}
 	.Date {
-		padding: 1rem;
+		padding: 1.5rem;
 		border-radius: 1rem;
 		background-color: hsl(0, 0%, 100%);
 		display: flex;
@@ -272,7 +269,7 @@
 	.Location {
 		background-color: hsl(0, 0%, 100%);
 		text-align: center;
-		padding: 1rem;
+		padding: 1.5rem;
 		border-radius: 1rem;
 		box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 		h2:first-child {
@@ -281,11 +278,14 @@
 		h2 {
 			font-size: clamp(0.4rem, 3vw, 0.9rem);
 		}
+		p {
+			margin-top: 0.5rem;
+		}
 	}
 	.Information {
 		background-color: hsl(0, 0%, 100%);
 		text-align: center;
-		padding: 1rem;
+		padding: 1.5rem;
 		border-radius: 1rem;
 		box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 		h1 {
@@ -293,14 +293,20 @@
 			margin-bottom: 0.4rem;
 		}
 		p {
-			padding: 0 1.75rem;
+			padding: 0 3.5rem 0.75rem;
+		}
+		p + p {
+			padding: 0.75rem 0rem 0;
+			margin: 0 auto;
+			width: 70%;
+			border-top: 2px solid hsl(0, 0%, 70%);
 		}
 	}
 	.Timeline {
 		display: flex;
 		flex-direction: column;
 		text-align: center;
-		min-height: 39vh;
+		min-height: 50vh;
 		min-width: 24vw;
 		background-color: hsl(0, 0%, 100%);
 		position: relative;
@@ -310,10 +316,10 @@
 		&::before {
 			content: '';
 			position: absolute;
-			top: 3.83rem;
+			top: 5.21rem;
 			left: 50%;
 			width: 0.25rem;
-			height: 12.4rem;
+			height: 20.62rem;
 			border-radius: 0 1rem;
 			background-color: hsl(0, 0%, 50%);
 		}
@@ -323,6 +329,9 @@
 			min-width: 6rem;
 			background-color: hsl(0, 0%, 100%);
 			margin-right: auto;
+			img {
+				height: 4rem;
+			}
 		}
 		.Cocktail,
 		.Dancing {
@@ -331,6 +340,9 @@
 			min-width: 5.75rem;
 			background-color: hsl(0, 0%, 100%);
 			margin-left: auto;
+			img {
+				height: 4rem;
+			}
 		}
 		.Ceremony::before,
 		.Dinner::before {
@@ -357,8 +369,103 @@
 
 #Story {
 	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-top: 7.5rem;
+	background-image: url('./assets/images/book.webp');
+	background-size: cover;
+	.Container {
+		max-height: 70vh;
+		max-width: 60vw;
+		border: 1px solid hsl(0, 0%, 70%);
+		padding: 3rem;
+		border-radius: 1rem;
+		box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+		overflow: scroll;
+		background-color: hsla(0, 0%, 100%, 0.85);
+	}
+	h1 {
+		text-align: center;
+		font-size: clamp(0.7rem, 3vw, 1.6rem);
+		margin-bottom: 0.5rem;
+		font-family: 'Oooh Baby', cursive;
+	}
+	h2 {
+		text-align: center;
+		font-size: clamp(0.4rem, 3vw, 0.6rem);
+		margin-bottom: 1.5rem;
+		font-family: 'Poppins', cursive;
+	}
+	h3 {
+		text-align: center;
+		font-size: clamp(0.4rem, 3vw, 1.3rem);
+		margin: 2rem 0 0.25rem;
+		font-family: 'Oooh Baby', cursive;
+	}
+	p {
+		font-size: clamp(0.6rem, 2vw, 0.9rem);
+		padding: 0.5rem 1rem;
+		text-shadow: 0px 1px 2px #fff;
+	}
+	span {
+		font-weight: bolder;
+	}
+	.Pics {
+		margin: 1rem 0;
+		display: flex;
+		align-items: center;
+		img {
+			height: 10rem;
+			border-radius: 2rem;
+		}
+	}
 }
 
 #Registry {
 	height: 100vh;
+	background-image: url('./assets/images/gifts.webp');
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-left: 20vw;
+	padding-top: 7.5rem;
+	.Card {
+		min-height: 20vh;
+		max-width: 20vw;
+		text-align: center;
+		border: 1px solid white;
+		border-radius: 0.5rem;
+		margin-bottom: 3rem;
+		background-color: hsl(0, 0%, 100%);
+		box-shadow: 0 4px 18px hsla(0, 0, 100%, 0.25),
+			0 5px 5px hsla(0, 0, 100%, 0.22);
+		text-decoration: none;
+		h1 {
+			padding-top: 1rem;
+			color: hsl(0, 0%, 0%);
+		}
+		img {
+			height: 10rem;
+			margin-top: 0.5rem;
+		}
+		&:hover {
+			text-decoration: underline;
+			color: hsl(0, 0%, 0%);
+			transition: all 0.15s ease-in-out;
+			box-shadow: 0 14px 28px hsla(0, 0, 100%, 0.25),
+				0 10px 10px hsla(0, 0, 100%, 0.22);
+		}
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
